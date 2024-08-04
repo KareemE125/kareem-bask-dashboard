@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Footer from "@/components/layout/Footer";
 import "@/styles/globals.css";
 import "@/styles/themes.css";
+import ReactQueryProvider from "@/lib/ReactQueryProvider";
 
 
 const fontNunito = Nunito({
@@ -31,10 +32,11 @@ export default function RootLayout({
           fontNunito.className
         )}
       >
-
-        <main className="h-screen">
-          {children}
-        </main>
+        <ReactQueryProvider>
+          <main>
+            {children}
+          </main>
+        </ReactQueryProvider>
         <footer className="mt-auto">
           <Footer />
         </footer>

@@ -1,4 +1,5 @@
 export const API_DASHBOARD_GET = "https://dashboard-api-dusky.vercel.app/api/get"
+export const API_TOKEN = process.env.API_TOKEN
 
 export const LOCAL_THEME_MODE = "theme-mode"
 export const LOCAL_THEME_COLOR = "theme-color"

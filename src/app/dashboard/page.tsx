@@ -1,14 +1,28 @@
-import { Button } from "@/components/ui/button"
-import ThemeCustomize from "@/components/ui/theme-customize"
+import DashboardContent from "@/components/DashboardContent"
+import { getDashboardData } from "@/server/actions"
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+  QueryClientConfig,
+} from '@tanstack/react-query'
 
+export default async function Dashboard() {
+  const queryClientConfig: QueryClientConfig = {
+    defaultOptions:{ 
+        queries: { staleTime: 1000 * 5 },
+    }
+}
+  const queryClient = new QueryClient(queryClientConfig)
 
-export default function Dashboard() {
-  
+  await queryClient.prefetchQuery({
+    queryKey: ['dashboard'],
+    queryFn: getDashboardData,
+  })
+
   return (
-    <main>
-      <h1>Dashboard</h1>
-      <Button>Click me</Button>
-      <ThemeCustomize />
-    </main>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <DashboardContent />
+    </HydrationBoundary>
   )
 }

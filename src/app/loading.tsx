@@ -1,6 +1,6 @@
-import Spinner from "@/components/spinner"
 import Image from "next/image";
 import LogeSquare from "@/assets/images/logo-square.png";
+import LoadingPlaceHolder from "@/components/LoadingPlaceHolder";
 
 export default function Loading() {
   return (
@@ -12,10 +12,7 @@ export default function Loading() {
         width={250}
         height={250}
       />
-      <div className="flex gap-4 justify-center items-center">
-        <Spinner />
-        <p className="text-xl font-semibold">Loading . . .</p>
-      </div>
+      <LoadingPlaceHolder />
     </main>
   );
 }

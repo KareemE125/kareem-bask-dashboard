@@ -15,11 +15,7 @@
   }
 
   :root::-webkit-scrollbar-thumb {
-    @apply bg-orange-600 rounded-full;
-  }
-
-  :root::-webkit-scrollbar-thumb:hover {
-    @apply bg-orange-500;
+    @apply bg-gray-500 rounded-full;
   }
 
   .dark::-webkit-scrollbar-track {
@@ -27,11 +23,11 @@
   }
 
   .dark::-webkit-scrollbar-thumb {
-    @apply bg-orange-700 rounded-full;
+    @apply bg-primary-foreground rounded-full;
   }
 
-  .dark::-webkit-scrollbar-thumb:hover {
-    @apply bg-orange-500;
+  :root::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
 
   }
 }
