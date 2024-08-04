@@ -1,4 +1,5 @@
 import DashboardContent from "@/components/DashboardContent"
+import { API_TOKEN } from "@/global/constants"
 import { getDashboardData } from "@/server/actions"
 import {
   dehydrate,
@@ -12,14 +13,14 @@ export default async function Dashboard() {
     defaultOptions:{ 
         queries: { staleTime: 1000 * 5 },
     }
-}
+  }
   const queryClient = new QueryClient(queryClientConfig)
 
   await queryClient.prefetchQuery({
     queryKey: ['dashboard'],
     queryFn: getDashboardData,
   })
-
+  
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <DashboardContent />

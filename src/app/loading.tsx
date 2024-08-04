@@ -12,7 +12,9 @@ export default function Loading() {
         width={250}
         height={250}
       />
-      <LoadingPlaceHolder />
+      <div className="-mt-8">
+        <LoadingPlaceHolder />
+      </div>
     </main>
   );
 }

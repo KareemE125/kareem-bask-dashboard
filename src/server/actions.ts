@@ -1,3 +1,4 @@
+'use server'
 
 import { ApiResponse } from "@/customTypes/api-response"
 import { DashboardData } from "@/customTypes/dashboard-data"
@@ -7,16 +8,14 @@ export async function getDashboardData(): Promise<ApiResponse<DashboardData>> {
     try {
         // mimic slow network
         // await new Promise(resolve => setTimeout(resolve, 3000))
-        console.log('====================================');
-        console.log('getDashboardData');
-        console.log('====================================');
+        
         const response = await fetch(API_DASHBOARD_GET, {
             headers:{
                 Authorization: `Bearer ${process.env.API_TOKEN}`
             }
         })
         if (!response.ok) {
-            throw new Error(`Error: ${response.status} ${response.statusText}`)
+            throw new Error(`${response.status} ${response.statusText}`)
         }
 
         // Check if response is JSON
@@ -34,3 +33,4 @@ export async function getDashboardData(): Promise<ApiResponse<DashboardData>> {
     }
 
 }
+

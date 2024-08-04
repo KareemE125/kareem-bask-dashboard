@@ -1,26 +1,23 @@
 export interface DashboardData {
-    success: boolean,
-    data: {
-        dashboardData: {
-            charts: {
-                salesOverTime: {
+    dashboardData: {
+        charts: {
+            salesOverTime: {
+                labels: string[],
+                data: number[]
+            },
+            userEngagement: {
                     labels: string[],
-                    data: number[]
-                },
-                userEngagement: {
-                        labels: string[],
-                    data: number[]
-                }
-            },
-            tables: {
-                recentTransactions: Transaction[],
-                topProducts: Product[]
-            },
-            map: {
-                locations: Location[]
+                data: number[]
             }
+        },
+        tables: {
+            recentTransactions: Transaction[],
+            topProducts: Product[]
+        },
+        map: {
+            locations: Location[]
         }
-    }  
+    }
 }
 
 interface Transaction{
