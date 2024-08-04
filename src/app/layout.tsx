@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import { cn } from "@/utils/utils";
+import { cn } from "@/lib/utils";
 
-import Footer from "@/components/layout/footer";
+import Footer from "@/components/layout/Footer";
 import "@/styles/globals.css";
+import "@/styles/themes.css";
 
 
 const fontNunito = Nunito({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"]
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -23,14 +24,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="">
-      <body 
+    <html lang="en" className="dark slate">
+      <body
         className={cn(
           "min-h-screen h-full flex flex-col bg-background antialiased",
           fontNunito.className
         )}
       >
-        <main>
+
+        <main className="h-screen">
           {children}
         </main>
         <footer className="mt-auto">

@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import appRoutes from '@/routes/routes'
 import Link from 'next/link'
  
 export default function NotFound() {
@@ -7,7 +8,7 @@ export default function NotFound() {
       <h2>404 | Not Found</h2>
       <p>Could not find requested resource </p>
       <Button asChild>
-        <Link href="/">Return Home</Link>
+        <Link href={appRoutes.dashboard}>Return Home</Link>
       </Button>
     </main>
   )
