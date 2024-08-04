@@ -37,7 +37,7 @@ export default function RootLayout({
             {children}
           </main>
         </ReactQueryProvider>
-        <footer className="mt-auto">
+        <footer className="fixed bottom-0 inset-x-0">
           <Footer />
         </footer>
       </body>

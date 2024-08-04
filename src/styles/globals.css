@@ -2,31 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-
+button svg{
+  @apply text-primary
+}
 
 @layer utilities {
-  :root::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 
-  :root::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     @apply bg-black bg-opacity-30;
   }
 
-  :root::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     @apply bg-gray-500 rounded-full;
   }
 
-  .dark::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     @apply bg-white bg-opacity-20;
   }
 
-  .dark::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     @apply bg-primary-foreground rounded-full;
   }
 
-  :root::-webkit-scrollbar-thumb:hover {
+  *::-webkit-scrollbar-thumb:hover {
     @apply bg-primary;
 
   }

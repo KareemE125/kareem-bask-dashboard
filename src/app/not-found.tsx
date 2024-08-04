@@ -8,7 +8,7 @@ export default function NotFound() {
       <h2>404 | Not Found</h2>
       <p>Could not find requested resource </p>
       <Button asChild>
-        <Link href={appRoutes.dashboard}>Return Home</Link>
+        <Link href={appRoutes[0].path}>Return Home</Link>
       </Button>
     </main>
   )
