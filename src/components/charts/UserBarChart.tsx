@@ -5,7 +5,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import CardLayout from "@/components/charts/ChartLayout";
+import CardLayout from "@/components/CardLayout";
 import { ChartData } from "@/customTypes/dashboard-data";
 
 

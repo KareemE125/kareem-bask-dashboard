@@ -9,7 +9,7 @@ type Route = {
 
 const appRoutes: Route[] = [
   { name: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard /> },
-  { name: 'Real Time', path: '/real-time', icon: <Hourglass /> },
+  { name: 'Real Time', path: '/', icon: <Hourglass /> },
   { name: 'Market', path: '/', icon: <ChartArea /> },
   { name: 'Community', path: '/', icon: <Handshake /> },
   { name: 'Settings', path: '/', icon: <Settings /> },

@@ -37,7 +37,7 @@ export default function SalesLineChart({ data }: { data: ChartData }) {
       title="Sales Over Time"
       description={`${formatDate(  data.labels[data.labels.length - 1])} - ${formatDate(data.labels[0])}`}
     >
-      <ChartContainer config={chartConfig} className="w-full max-h-[350px]">
+      <ChartContainer config={chartConfig} className="w-full max-h-[300px]">
         <LineChart
           data={chartData}
           margin={{

@@ -20,14 +20,14 @@ export default function Sidebar({children}: {children: React.ReactNode}) {
           {isOpen ? <PanelLeftClose /> : <PanelLeftOpen />}
         </Button>
       </div>
-      <main className="w-full overflow-hidden">
+      <main className="flex flex-col h-full w-full overflow-hidden">
         {children}
+        <div className='mt-auto'>
+          <footer className='bg-background w-full border-t border-primary shadow-md font-semibold text-xs text-center '>
+            <p className="p-2">© 2024 Bask Dashboard, All rights reserved.</p>
+          </footer>
+        </div>
       </main>
-      <div className='mt-auto'>
-        <footer className='bg-background w-full border-t border-primary shadow-md font-semibold text-xs text-center '>
-          <p className="p-2">© 2024 Bask Dashboard, All rights reserved.</p>
-        </footer>
-      </div>
     </section>
   )
 }

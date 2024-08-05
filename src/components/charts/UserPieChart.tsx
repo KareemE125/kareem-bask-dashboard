@@ -51,7 +51,7 @@ export default function UserPieChart({ data }: { data: ChartData }) {
     >
       <ChartContainer
         config={chartConfig}
-        className="mx-auto aspect-square max-h-[300px] -mt-8"
+        className="m-auto aspect-square max-h-[300px]"
       >
         <PieChart>
           <ChartTooltip

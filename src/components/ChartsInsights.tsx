@@ -1,14 +1,42 @@
-import { DashboardData } from "@/customTypes/dashboard-data";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
 import SalesLineChart from "@/components/charts/SalesLineChart";
 import UserPieChart from "@/components/charts/UserPieChart";
-import UserBarChart from "./charts/UserBarChart";
+import { DashboardData } from "@/customTypes/dashboard-data";
+
 
 export default function ChartsInsights({ data }:{ data: DashboardData }) {
   return (
-    <section className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-        <SalesLineChart data={data.dashboardData.charts.salesOverTime} />
-        <UserPieChart data={data.dashboardData.charts.userEngagement} />
-        {/* <UserBarChart data={data.dashboardData.charts.userEngagement} /> */}
+    <>
+    {/* Wide View */}
+    <section className="hidden xl:block">
+      <ResizablePanelGroup
+        direction="horizontal"
+        className="w-full rounded-lg"
+      >
+        <ResizablePanel defaultSize={65} minSize={40}>
+          <SalesLineChart data={data.dashboardData.charts.salesOverTime} />
+        </ResizablePanel>
+        <ResizableHandle withHandle className="w-4 bg-transparent"/>
+        <ResizablePanel defaultSize={35} minSize={20}>
+          <UserPieChart data={data.dashboardData.charts.userEngagement} />
+        </ResizablePanel>
+      </ResizablePanelGroup>
     </section>
+
+    {/* Narrow View */}
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 xl:hidden">
+         <SalesLineChart data={data.dashboardData.charts.salesOverTime} />
+         <UserPieChart data={data.dashboardData.charts.userEngagement} />
+         {/* <UserBarChart data={data.dashboardData.charts.userEngagement} /> */}
+     </section>
+    </>
   )
 }
+
+
+
+
