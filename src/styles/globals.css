@@ -12,6 +12,11 @@ button svg{
     height: 8px;
   }
 
+  .thin-scroll::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
   *::-webkit-scrollbar-track {
     @apply bg-black bg-opacity-30;
   }
@@ -20,11 +25,11 @@ button svg{
     @apply bg-gray-500 rounded-full;
   }
 
-  *::-webkit-scrollbar-track {
+  *.dark::-webkit-scrollbar-track {
     @apply bg-white bg-opacity-20;
   }
 
-  *::-webkit-scrollbar-thumb {
+  *.dark::-webkit-scrollbar-thumb {
     @apply bg-primary-foreground rounded-full;
   }
 

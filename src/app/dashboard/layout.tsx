@@ -16,8 +16,8 @@ export default function DashboardLayout({
         </Sidebar>
       </aside>
       <main className="w-full">
-        <nav className="w-full sticky top-0 z-40 h-14"><Navbar/></nav>
-        <main className="p-8">{children}</main>
+        <nav className="w-full sticky top-0 z-40"><Navbar/></nav>
+        <main className="p-4 sm:p-8">{children}</main>
       </main>
     </main>
   );

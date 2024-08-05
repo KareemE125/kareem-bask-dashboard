@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.maptiler.com',
+        port: '',
+        pathname: '/maps/basic/static/**',
+      },
+    ],
+  },
   async redirects() {
     return [
       {

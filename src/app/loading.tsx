@@ -1,6 +1,6 @@
 import Image from "next/image";
 import LogeSquare from "@/assets/images/logo-square.png";
-import LoadingPlaceHolder from "@/components/LoadingPlaceHolder";
+import LoadingPlaceHolder from "@/components/shared/LoadingPlaceHolder";
 
 export default function Loading() {
   return (

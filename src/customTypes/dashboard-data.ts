@@ -1,14 +1,8 @@
 export interface DashboardData {
     dashboardData: {
         charts: {
-            salesOverTime: {
-                labels: string[],
-                data: number[]
-            },
-            userEngagement: {
-                    labels: string[],
-                data: number[]
-            }
+            salesOverTime: ChartData,
+            userEngagement: ChartData
         },
         tables: {
             recentTransactions: Transaction[],
@@ -20,22 +14,27 @@ export interface DashboardData {
     }
 }
 
-interface Transaction{
+export interface Transaction{
     id: number;
     user: string;
     amount: string;
     date: string;
 }
 
-interface Product{
+export interface Product{
     id: string;
     name: string;
     sales: number;
 }
 
-interface Location{
+export interface Location{
     latitude: number;
     longitude: number;
     label: string;
     activity: number;
+}
+
+export interface ChartData {
+    labels: string[];
+    data: number[];
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Spinner from "@/components/spinner";
+import Spinner from "@/components/shared/spinner";
 
 export default function LoadingPlaceHolder() {
   return (

@@ -1,4 +1,4 @@
-import { LayoutDashboard, ChartArea } from "lucide-react"
+import { LayoutDashboard, Hourglass, ChartArea, Handshake, Settings, Headset, MessageSquareWarning } from "lucide-react"
 import { ReactElement } from "react"
 
 type Route = {
@@ -9,7 +9,12 @@ type Route = {
 
 const appRoutes: Route[] = [
   { name: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard /> },
-  { name: 'Sales', path: '/sales', icon: <ChartArea /> },
+  { name: 'Real Time', path: '/real-time', icon: <Hourglass /> },
+  { name: 'Market', path: '/', icon: <ChartArea /> },
+  { name: 'Community', path: '/', icon: <Handshake /> },
+  { name: 'Settings', path: '/', icon: <Settings /> },
+  { name: 'Support', path: '/', icon: <Headset /> },
+  { name: 'Feedback', path: '/', icon: <MessageSquareWarning /> },
 ]
 
 export default appRoutes 

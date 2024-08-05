@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        "table-break": "1150px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -65,16 +65,26 @@ export default function ThemeCustomize() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="default" className='flex items-center gap-2 bg-secondary'>
-              <div className='bg-primary rounded-full w-4 h-4'></div>
+              <div className={`
+                ${color=='zinc' && '!bg-zinc-600'}  
+                ${color === 'slate' && '!bg-slate-600'}
+                bg-primary rounded-full w-4 h-4`}
+              ></div>
               <p className='capitalize'>{color}</p>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <section className='grid grid-cols-3 gap-2'>
+            <section className='grid grid-cols-3 gap-2 p-1'>
               {
                 THEME_COLORS.map((color) => (
                   <DropdownMenuItem className='flex items-center gap-2 col-span-1 border' key={color} onClick={() => setColorHandler(color)}>
-                    <div className={`${mode} ${color} bg-primary rounded-full w-4 h-4`}></div>
+                    <div className={`
+                      ${mode} ${color} 
+                      ${color=='zinc' && '!bg-zinc-600'}  
+                      ${color === 'slate' && '!bg-slate-600'}
+                      bg-primary  
+                      rounded-full w-4 h-4`}
+                    ></div>
                     <p className='capitalize'>{color}</p>
                   </DropdownMenuItem>
                 ))
