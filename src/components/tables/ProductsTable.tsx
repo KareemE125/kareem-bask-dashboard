@@ -36,10 +36,18 @@ import { Product } from "@/customTypes/dashboard-data"
 export const columns: ColumnDef<Product>[] = [
   {
     accessorKey: "name",
-    header: "Name",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("name")}</div>
-    ),
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Name
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+    cell: ({ row }) => <div className="lowercase">{row.getValue("name")}</div>,
   },
   {
     accessorKey: "sales",
@@ -84,18 +92,18 @@ export default function TransactionTable({data}: {data: Product[]}) {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4 gap-6">
+      <div className="flex flex-col sm:flex-row items-center py-4 gap-3">
         <Input
           placeholder="Filter product..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm"
+          className="w-full"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="outline" className="ml-auto h-10">
               Columns <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
@@ -145,7 +153,7 @@ export default function TransactionTable({data}: {data: Product[]}) {
                   key={row.id}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className="px-8">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

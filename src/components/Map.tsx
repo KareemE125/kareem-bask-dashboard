@@ -1,7 +1,7 @@
 "use client";
 
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet";
+import { MapContainer, TileLayer, Popup, CircleMarker } from "react-leaflet";
 import { Location } from "@/customTypes/dashboard-data";
 
 export default function Map({ locations }: { locations: Location[] }) {
@@ -22,7 +22,8 @@ export default function Map({ locations }: { locations: Location[] }) {
             key={location.label + index}
             center={[location.latitude, location.longitude]}
             radius={10}
-            fillColor="#0070f3"
+            fillColor="hsl(var(--primary))"
+            color="hsl(var(--primary))"
           >
             <Popup>
               {location.label} <br /> {location.activity} Activities

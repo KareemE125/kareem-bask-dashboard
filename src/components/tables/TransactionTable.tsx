@@ -37,14 +37,34 @@ import { Transaction } from "@/customTypes/dashboard-data"
 export const columns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "user",
-    header: "User",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          User
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("user")}</div>
     ),
   },
   {
     accessorKey: "amount",
-    header: () => <div>Amount</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Amount
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
     cell: ({ row }) => {
       let amount = row.getValue("amount")
       if (typeof amount === "string") {
@@ -102,18 +122,18 @@ export default function ProductsTable({data}: {data: Transaction[]}) {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4 gap-6">
+      <div className="flex flex-col sm:flex-row items-center py-4 gap-3">
         <Input
           placeholder="Filter user..."
           value={(table.getColumn("user")?.getFilterValue() as string) ?? ""}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             table.getColumn("user")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm"
+          className="w-full"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="outline" className="ml-auto h-10">
               Columns <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
@@ -163,7 +183,7 @@ export default function ProductsTable({data}: {data: Transaction[]}) {
                   key={row.id}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className="px-8">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()

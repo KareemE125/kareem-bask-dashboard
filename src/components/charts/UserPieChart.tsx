@@ -51,9 +51,9 @@ export default function UserPieChart({ data }: { data: ChartData }) {
     >
       <ChartContainer
         config={chartConfig}
-        className="m-auto aspect-square max-h-[300px]"
+        className="m-auto aspect-square max-h-[350px]"
       >
-        <PieChart>
+        <PieChart className="scale-[1.16] -translate-y-3">
           <ChartTooltip
             cursor={false}
             content={<ChartTooltipContent hideLabel />}
@@ -62,8 +62,7 @@ export default function UserPieChart({ data }: { data: ChartData }) {
             data={chartData}
             dataKey="users"
             nameKey="week"
-            innerRadius={50}
-            strokeWidth={12}
+            innerRadius={65}
           >
             <Label
               content={({ viewBox }) => {
