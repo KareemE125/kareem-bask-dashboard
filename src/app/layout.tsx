@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import { cn, generateRandomThemeColor } from "@/lib/utils";
-
+import { cn } from "@/lib/utils";
+import ReactQueryProvider from "@/lib/ReactQueryProvider";
+import { generateRandomThemeColor } from "@/server/actions";
 import Footer from "@/components/layout/Footer";
 import "@/styles/globals.css";
 import "@/styles/themes.css";
-import ReactQueryProvider from "@/lib/ReactQueryProvider";
 
 
 const fontNunito = Nunito({
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "Bask Dashboard is where you can get full insights and keep focused with all your data gathered in one place.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-  const randomThemeColor = generateRandomThemeColor();
+  const randomThemeColor = await generateRandomThemeColor();
 
   return (
     <html lang="en" className={`dark ${randomThemeColor}`}>

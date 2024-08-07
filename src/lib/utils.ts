@@ -19,8 +19,3 @@ export function setAppTheme(mode: TThemeMode, color?: TThemeColors) {
   }
   localStorage.setItem(LOCAL_THEME_MODE, mode);
 }
-
-export function generateRandomThemeColor(){
-  const randomIndex = Math.floor(Math.random() * THEME_COLORS.length);
-  return THEME_COLORS[randomIndex];
-}

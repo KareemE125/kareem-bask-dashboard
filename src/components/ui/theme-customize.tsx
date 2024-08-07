@@ -63,7 +63,7 @@ export default function ThemeCustomize() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="default" className='flex items-center gap-2 bg-secondary'>
-              <div className={`bg-primary rounded-full w-4 h-4`}
+              <div className={`dark ${color} bg-primary rounded-full w-4 h-4`}
               ></div>
               <p className='capitalize'>{color||"Choose Color"}</p>
             </Button>
@@ -73,7 +73,7 @@ export default function ThemeCustomize() {
               {
                 THEME_COLORS.map((color) => (
                   <DropdownMenuItem className='flex items-center gap-2 col-span-1 border' key={color} onClick={() => setColorHandler(color)}>
-                    <div className={`${mode} ${color} bg-primary rounded-full w-4 h-4`}></div>
+                    <div className={`dark ${color} bg-primary rounded-full w-4 h-4`}></div>
                     <p className='capitalize'>{color}</p>
                   </DropdownMenuItem>
                 ))

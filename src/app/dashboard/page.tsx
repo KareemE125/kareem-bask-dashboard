@@ -1,5 +1,4 @@
 import DashboardContent from "@/components/DashboardContent"
-import { API_TOKEN } from "@/global/constants"
 import { getDashboardData } from "@/server/actions"
 import {
   dehydrate,
