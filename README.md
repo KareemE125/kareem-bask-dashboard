@@ -11,35 +11,46 @@ Bask Dashboard is a real-time, customizable dashboard that provides comprehensiv
 ## Visit Live 👉 https://kareem-bask-health.vercel.app/ (Deployed on Vercel)
 
 ## Screenshot
-![ss](https://github.com/user-attachments/assets/ff23e28d-8719-46f8-8f26-e6adba65c26b)
+![ss](https://github.com/user-attachments/assets/2e6554f9-509c-47b9-a0d5-8c5166e7f35a)
 
 
 ## Features
 
 - **Real-Time Data Fetching:** The dashboard fetches data every 5 seconds to ensure that users have the most up-to-date information.
-- **Customizable Layout:** Users can resize and arrange widgets (charts and tables) to their preference.
-- **Theme Customization:** Users can switch between dark and light modes and choose from a range of theme colors, dynamically loaded from the server.
+- **Data Hydration:** Efficient data hydration ensures that data is readily available on load, enhancing performance and user experience.
+- **Server Components:** Utilizes Next.js 14's server components effectively for optimized rendering and performance.
+- **Loading and Error States:** Implements Next.js’s built-in loading.js, error.js and not-found.js files for seamless handling of fallbacks.
+- **Server Actions:** Incorporates server actions to handle data fetching and processing efficiently.
+- **Theme Customization:** Users can switch between dark and light modes and choose from a range of theme colors, dynamically loaded from the server on each load.
+- **Customizable Layout:** Users can resize widgets (charts and tables) to their preference.
 - **Responsive Design:** The dashboard is designed to be fully responsive, providing a seamless experience on both desktop and mobile devices.
 - **Error Handling:** Comprehensive error handling is implemented to provide a smooth user experience.
 - **Type Safety:** TypeScript is used throughout the application to ensure type safety and improve code quality.
 
+
+
 ## User Journey
 
 1. **Landing on the Dashboard:** Upon loading, users are presented with a default view of the dashboard, displaying key statistics, charts, and a map.
-2. **Customizing the Layout:** Users can resize and move the widgets (charts, tables) around to customize the layout according to their preferences.
+2. **Customizing the Layout:** Users can resize the widgets container (charts, tables) around to customize the layout according to their preferences.
 3. **Changing Themes:** Users can switch between dark and light modes using the theme customizer in the navbar. Additionally, they can choose a color theme from the provided palette.
 4. **Interacting with Data:** The dashboard automatically refreshes data every 5 seconds, ensuring real-time updates. Users can filter, sort, and search through the table data.
 5. **Exploring the Map:** The map widget shows pins indicating locations of user activities, providing a geographical representation of the data.
+6. **Responsive Design:** The layout of the widgets adjusts according to the screen size, ensuring that all elements are properly displayed on different devices. The side navbar can be toggled to maximize the viewing area at wide views. On tablet and mobile views, the sidebar becomes a side drawer that toggles over the main content.
+
+
 
 ## Design and Architectural Decisions
 
 - **Next.js 14:** Utilized for its powerful features like file-based routing, server-side rendering, and static site generation.
-- **React Query:** Implemented for efficient data fetching, caching, and synchronization, ensuring that the dashboard is always up-to-date.
+- **React Query:** Implemented for efficient data fetching, caching, synchronization, and hydration (prefetching) ensuring that the dashboard is always up-to-date.
 - **Tailwind CSS:** Used for utility-first CSS styling, enabling rapid and consistent UI development.
 - **Shadcn:** Integrated for theme customization capabilities, allowing users to personalize their dashboard experience.
 - **TypeScript:** Employed to enhance type safety and maintain code quality across the application.
 - **Error and Loading States:** Implemented using Next.js’s built-in error.js, loading.js, and not-found.js files for handling different states seamlessly.
 - **Responsive Layout:** Ensured through the use of CSS Grid and Flexbox, making the dashboard adaptable to various screen sizes.
+
+
 
 ## Setup Instructions
 
