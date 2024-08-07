@@ -1,5 +1,9 @@
 @tailwind base;
 
+.bg-gradient-theme {
+  background: conic-gradient(blue , green , red, pink, orange );
+}
+
 @layer base {
 
   :root {

@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import { cn } from "@/lib/utils";

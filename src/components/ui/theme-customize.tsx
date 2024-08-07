@@ -63,7 +63,7 @@ export default function ThemeCustomize() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="default" className='flex items-center gap-2 bg-secondary'>
-              <div className={`dark ${color} bg-primary rounded-full w-4 h-4`}
+              <div className={`dark ${color ? `${color} bg-primary` : 'bg-gradient-theme'} rounded-full w-4 h-4`}
               ></div>
               <p className='capitalize'>{color||"Choose Color"}</p>
             </Button>
