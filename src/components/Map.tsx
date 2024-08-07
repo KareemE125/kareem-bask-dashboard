@@ -10,7 +10,7 @@ export default function Map({ locations }: { locations: Location[] }) {
         className="w-full h-[400px] rounded-lg"
         center={[39, -98]}
         zoom={3}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

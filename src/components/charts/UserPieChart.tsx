@@ -96,7 +96,7 @@ export default function UserPieChart({ data }: { data: ChartData }) {
           </Pie>
           <ChartLegend
               content={<ChartLegendContent nameKey="week" />}
-              className="-translate-y-2 flex-wrap gap-2 [&>*]:basis-1/4 [&>*]:justify-center"
+              className="px-4 -translate-y-2 flex flex-wrap gap-x-5 gap-y-2 justify-center"
             />
         </PieChart>
       </ChartContainer>
