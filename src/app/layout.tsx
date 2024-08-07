@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { cn, generateRandomThemeColor } from "@/lib/utils";
 
 import Footer from "@/components/layout/Footer";
 import "@/styles/globals.css";
@@ -24,8 +24,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const randomThemeColor = generateRandomThemeColor();
+
   return (
-    <html lang="en" className="dark slate">
+    <html lang="en" className={`dark ${randomThemeColor}`}>
       <body
         className={cn(
           "min-h-screen h-full flex flex-col bg-background antialiased",

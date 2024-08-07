@@ -1,2 +1,5 @@
+import { THEME_COLORS } from "@/global/constants";
+
 export type TThemeMode = "light" | "dark" ;
-export type TThemeColors = "zinc" | "slate" | "red" |  "rose" | "orange" | "green" |  "blue" | "violet" ;
+
+export type TThemeColors = (typeof THEME_COLORS)[number];

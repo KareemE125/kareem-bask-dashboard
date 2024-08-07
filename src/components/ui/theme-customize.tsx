@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { TThemeColors, TThemeMode } from '@/customTypes/theme-types'
-import { LOCAL_THEME_COLOR, LOCAL_THEME_MODE, THEME_COLORS, THEME_MODES } from '@/global/constants'
+import { LOCAL_THEME_MODE, THEME_COLORS, THEME_MODES } from '@/global/constants'
 import {setAppTheme} from '@/lib/utils'
 import { useEffect, useState } from 'react'
 import { Moon, Sun } from "lucide-react" 
@@ -22,15 +22,13 @@ export default function ThemeCustomize() {
 
   useEffect(() => {
     const themeMode: TThemeMode = (localStorage.getItem(LOCAL_THEME_MODE) || "dark") as TThemeMode
-    const themeColor: TThemeColors = (localStorage.getItem(LOCAL_THEME_COLOR) || "orange") as TThemeColors
     setMode(themeMode)
-    setColor(themeColor)
-    setAppTheme(themeMode, themeColor)
+    setAppTheme(themeMode)
   }, [])
   
   const setModeHandler = (mode: TThemeMode) => {
     setMode(mode)
-    setAppTheme(mode, color!)
+    setAppTheme(mode)
   }
 
   const setColorHandler = (color: TThemeColors) => {
@@ -67,7 +65,7 @@ export default function ThemeCustomize() {
             <Button variant="outline" size="default" className='flex items-center gap-2 bg-secondary'>
               <div className={`bg-primary rounded-full w-4 h-4`}
               ></div>
-              <p className='capitalize'>{color}</p>
+              <p className='capitalize'>{color||"Choose Color"}</p>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
