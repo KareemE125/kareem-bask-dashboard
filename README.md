@@ -23,6 +23,7 @@ Bask Dashboard is a real-time, customizable dashboard that provides comprehensiv
 - **Tailwind CSS:** Utility-first CSS framework for rapid and consistent UI development.
 - **Shadcn:** Provides UI components, theme customization and color management.
 - **TypeScript:** Ensures type safety and improves code quality.
+- **Lucide-react:** Beautiful & consistent icons.
 - **react-leaflet:** For displaying geographical data on interactive maps.
 - **npm:** For managing project dependencies and scripts.
 
