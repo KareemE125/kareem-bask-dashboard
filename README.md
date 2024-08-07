@@ -10,8 +10,21 @@ Bask Dashboard is a real-time, customizable dashboard that provides comprehensiv
 
 ## Visit Live 👉 https://kareem-bask-health.vercel.app/ (Deployed on Vercel)
 
+
 ## Screenshot
+
 ![ss](https://github.com/user-attachments/assets/2e6554f9-509c-47b9-a0d5-8c5166e7f35a)
+
+
+## Tech Stack
+
+- **Next.js 14:** A React framework for server-side rendering and static site generation.
+- **React Query:** For efficient data fetching, caching, and synchronization.
+- **Tailwind CSS:** Utility-first CSS framework for rapid and consistent UI development.
+- **Shadcn:** Provides UI components, theme customization and color management.
+- **TypeScript:** Ensures type safety and improves code quality.
+- **react-leaflet:** For displaying geographical data on interactive maps.
+- **npm:** For managing project dependencies and scripts.
 
 
 ## Features
@@ -41,16 +54,24 @@ Bask Dashboard is a real-time, customizable dashboard that provides comprehensiv
 
 
 ## Design and Architectural Decisions
+### Technologies Used
+  - **Next.js 14:** Utilized for its powerful features like file-based routing, server-side rendering, and static site generation.
+  - **React Query:** Implemented for efficient data fetching, caching, synchronization, and hydration (prefetching) ensuring that the dashboard is always up-to-date.
+  - **Tailwind CSS:** Used for utility-first CSS styling, enabling rapid and consistent UI development.
+  - **Shadcn:** Integrated for theme customization capabilities, allowing users to personalize their dashboard experience.
+  - **TypeScript:** Employed to enhance type safety and maintain code quality across the application.
+  - **Error and Loading States:** Implemented using Next.js’s built-in error.js, loading.js, and not-found.js files for handling different states seamlessly.
+  - **Responsive Layout:** Ensured through the use of CSS Grid and Flexbox, making the dashboard adaptable to various screen sizes.
 
-- **Next.js 14:** Utilized for its powerful features like file-based routing, server-side rendering, and static site generation.
-- **React Query:** Implemented for efficient data fetching, caching, synchronization, and hydration (prefetching) ensuring that the dashboard is always up-to-date.
-- **Tailwind CSS:** Used for utility-first CSS styling, enabling rapid and consistent UI development.
-- **Shadcn:** Integrated for theme customization capabilities, allowing users to personalize their dashboard experience.
-- **TypeScript:** Employed to enhance type safety and maintain code quality across the application.
-- **Error and Loading States:** Implemented using Next.js’s built-in error.js, loading.js, and not-found.js files for handling different states seamlessly.
-- **Responsive Layout:** Ensured through the use of CSS Grid and Flexbox, making the dashboard adaptable to various screen sizes.
-
-
+### Layout and Components
+  - **Horizontal Navbar:** Features theme customizers (dark/light mode and color palette). Includes links to other parts of the dashboard, though only the first tab is functional.
+  - **Aside Navbar:** A sidebar that is hidden on smaller screens and becomes a side drawer on mobile and tablet views.
+  - **Main Content Area:**
+    - **Cards:** Display key statistics.
+    - **Charts:** Visualize data trends, such as sales over time and user engagement.
+    - **Tables:** Show detailed data with options for filtering, sorting, and column management.
+    - **Map:** Provides a geographical view with markers indicating user activities.
+  - **Resizability:** Widgets like charts and tables are resizable, allowing users to customize their layout.
 
 ## Setup Instructions
 
@@ -63,109 +84,115 @@ Bask Dashboard is a real-time, customizable dashboard that provides comprehensiv
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/yourusername/bask-dashboard.git
-cd bask-dashboard
-```
+  ```bash
+  git clone https://github.com/yourusername/bask-dashboard.git
+  cd bask-dashboard
+  ```
 
-2. Install dependencies:
+2. Add a `.env` file in the root directory and add the following environment variables
 
-```bash
-npm install
-# or
-yarn install
-```
+  ```env
+  API_KEY=your_api_key
+  ```
+
+3. Install dependencies:
+
+  ```bash
+  npm install
+  # or
+  yarn install
+  ```
 
 ### Running the Application
 
 1. Start the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+  ```bash
+  npm run dev
+  # or
+  yarn dev
+  ```
 
 2. Open your browser and navigate to http://localhost:3000 to view the dashboard.
 
 ### File Structure
-```
-src
-├── app
-│   ├── dashboard
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   ├── layout.tsx
-│   ├── loading.tsx
-│   ├── not-found.tsx
-│   ├── error.tsx
-│   ├── icon.png
-├── assets
-│   ├── images
-│   │   ├── (some image *.png)
-├── components
-│   ├── layout
-│   │   ├── sidebar
-│   │   │   ├── NavLink.tsx
-│   │   │   ├── Sidebar.tsx
-│   │   │   ├── SidebarContent.tsx
-│   │   │   ├── SideSheet.tsx
-│   │   ├── Navbar.tsx
-│   │   ├── Footer.tsx
-│   ├── charts
-│   │   ├── SalesLineChart.tsx
-│   │   ├── UserPieChart.tsx
-│   ├── tables
-│   │   ├── TransactionTable.tsx
-│   │   ├── ProductsTable.tsx
-│   ├── shared
-│   │   ├── LoadingPlaceHolder.tsx
-│   │   ├── PlaceHolder.tsx
-│   │   ├── spinner.tsx
-│   ├── ui
-│   │   ├── (some shadcn modified components)
-│   ├── DashboardContent.tsx
-│   ├── CardsInsights.tsx
-│   ├── DashboardCard.tsx
-│   ├── CardLayout.tsx
-│   ├── ChartsInsights.tsx
-│   ├── TableInsights.tsx
-│   ├── MapInsights.tsx
-│   ├── Map.tsx
-├── customTypes
-│   ├── theme-types.ts
-│   ├── dashboard-data.ts
-│   ├── api-response.ts
-├── global
-│   ├── constants.ts
-├── lib
-│   ├── ReactQueryProvider.tsx
-│   ├── chartUtils.ts
-│   ├── formaters.ts
-│   ├── utils.ts
-├── server
-│   ├── actions.ts
-├── styles
-│   ├── globals.css
-│   ├── themes.css
-├── routes
-│   ├── routes.tsx
-```
+  ```
+  src
+  ├── app
+  │   ├── dashboard
+  │   │   ├── layout.tsx
+  │   │   ├── page.tsx
+  │   ├── layout.tsx
+  │   ├── loading.tsx
+  │   ├── not-found.tsx
+  │   ├── error.tsx
+  │   ├── icon.png
+  ├── assets
+  │   ├── images
+  │   │   ├── (some image *.png)
+  ├── components
+  │   ├── layout
+  │   │   ├── sidebar
+  │   │   │   ├── NavLink.tsx
+  │   │   │   ├── Sidebar.tsx
+  │   │   │   ├── SidebarContent.tsx
+  │   │   │   ├── SideSheet.tsx
+  │   │   ├── Navbar.tsx
+  │   │   ├── Footer.tsx
+  │   ├── charts
+  │   │   ├── SalesLineChart.tsx
+  │   │   ├── UserPieChart.tsx
+  │   ├── tables
+  │   │   ├── TransactionTable.tsx
+  │   │   ├── ProductsTable.tsx
+  │   ├── shared
+  │   │   ├── LoadingPlaceHolder.tsx
+  │   │   ├── PlaceHolder.tsx
+  │   │   ├── spinner.tsx
+  │   ├── ui
+  │   │   ├── (some shadcn modified components)
+  │   ├── DashboardContent.tsx
+  │   ├── CardsInsights.tsx
+  │   ├── DashboardCard.tsx
+  │   ├── CardLayout.tsx
+  │   ├── ChartsInsights.tsx
+  │   ├── TableInsights.tsx
+  │   ├── MapInsights.tsx
+  │   ├── Map.tsx
+  ├── customTypes
+  │   ├── theme-types.ts
+  │   ├── dashboard-data.ts
+  │   ├── api-response.ts
+  ├── global
+  │   ├── constants.ts
+  ├── lib
+  │   ├── ReactQueryProvider.tsx
+  │   ├── chartUtils.ts
+  │   ├── formaters.ts
+  │   ├── utils.ts
+  ├── server
+  │   ├── actions.ts
+  ├── styles
+  │   ├── globals.css
+  │   ├── themes.css
+  ├── routes
+  │   ├── routes.tsx
+  ```
 
 
 ## Getting Started with Next.js Project
 
 First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  ```bash
+  npm run dev
+  # or
+  yarn dev
+  # or
+  pnpm dev
+  # or
+  bun dev
+  ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
