@@ -12,16 +12,16 @@ export default function ChartsInsights({ data }:{ data: DashboardData }) {
   return (
     <>
     {/* Wide View */}
-    <section className="hidden xl:block">
+    <section className="overflow-hidden hidden xl:block">
       <ResizablePanelGroup
         direction="horizontal"
-        className="w-full rounded-lg"
+        className="rounded-lg"
       >
-        <ResizablePanel defaultSize={65} minSize={40}>
+        <ResizablePanel defaultSize={65} minSize={35}>
           <SalesLineChart data={data.dashboardData.charts.salesOverTime} />
         </ResizablePanel>
         <ResizableHandle withHandle className="w-4 bg-transparent"/>
-        <ResizablePanel defaultSize={35} minSize={20}>
+        <ResizablePanel defaultSize={35} minSize={30}>
           <UserPieChart data={data.dashboardData.charts.userEngagement} />
         </ResizablePanel>
       </ResizablePanelGroup>

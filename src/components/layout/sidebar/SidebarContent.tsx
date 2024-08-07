@@ -10,7 +10,7 @@ export default function SidebarContent() {
         <Image src={logo} alt='logo' width={450} className='invert dark:invert-0'/>
       </header>
       <section className='flex flex-col gap-2'>
-        { appRoutes.map((route) => <NavLink key={route.path} to={route.path} className='flex items-center gap-3'>
+        { appRoutes.map((route, i) => <NavLink key={`${route.path}-#${i}`} to={route.path} className='flex items-center gap-3'>
           <span>{route.icon}</span>
           <span className='pt-1'>{route.name}</span>
         </NavLink>) }

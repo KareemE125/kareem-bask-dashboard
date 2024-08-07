@@ -16,7 +16,7 @@ type CardLayoutProps = {
 export default function CardLayout({ title, description, children }: CardLayoutProps) {
 
   return (
-    <Card className="h-full">
+    <Card>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>

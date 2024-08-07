@@ -17,13 +17,13 @@ export default function TableInsights({ data }: { data: DashboardData }) {
         direction="horizontal"
         className="w-full rounded-lg"
       >
-        <ResizablePanel defaultSize={70} minSize={30}>
+        <ResizablePanel defaultSize={70} minSize={50}>
           <CardLayout title="Recent Transactions" description="Browse Recent Users Transactions by dates">
             <TransactionTable data={data.dashboardData.tables.recentTransactions} />
           </CardLayout>    
         </ResizablePanel>
         <ResizableHandle withHandle className="w-4 bg-transparent"/>
-        <ResizablePanel defaultSize={30}  minSize={20}>
+        <ResizablePanel defaultSize={30}  minSize={35}>
           <CardLayout title="Top Products" description="Browse Top Products' Names and their Sales">
             <ProductsTable data={data.dashboardData.tables.topProducts} />
           </CardLayout>    
