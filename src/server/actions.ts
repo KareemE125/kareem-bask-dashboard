@@ -34,7 +34,6 @@ export async function getDashboardData(): Promise<ApiResponse<DashboardData>> {
 }
 
 export async function generateRandomThemeColor() {
-    revalidatePath('/')
     const randomIndex = Math.floor(Math.random() * THEME_COLORS.length);
     return THEME_COLORS[randomIndex];
 }
